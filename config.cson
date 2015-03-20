@@ -1,0 +1,11 @@
+"*":
+  editor: {}
+  core:
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  "exception-reporting":
+    userId: "14cb81bb-e612-eb6c-efb3-31ae2eb6e3df"
+  welcome:
+    showOnStartup: false
