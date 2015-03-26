@@ -1,0 +1,35 @@
+{
+  "name": "language-javascript-jsx",
+  "version": "0.3.1",
+  "description": "JavaScript with JSX Bundle for Atom",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subtlegradient/language-javascript-jsx"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# JavaScript with JSX Bundle for Atom\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/subtlegradient/language-javascript-jsx/issues"
+  },
+  "homepage": "https://github.com/subtlegradient/language-javascript-jsx",
+  "_id": "language-javascript-jsx@0.3.1",
+  "dist": {
+    "shasum": "7f3363981dd356184f39139d3a1d55bdf04c19df"
+  },
+  "_resolved": "/private/var/folders/kt/r0d45m992ls9dpg_d9t64fd00000gp/T/d-114927-5364-1ic849t/package.tgz",
+  "_from": "/private/var/folders/kt/r0d45m992ls9dpg_d9t64fd00000gp/T/d-114927-5364-1ic849t/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

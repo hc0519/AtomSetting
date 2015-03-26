@@ -1,0 +1,39 @@
+{
+  "name": "linter-jsl",
+  "linter-package": true,
+  "activationEvents": [],
+  "main": "./lib/init",
+  "version": "0.0.1",
+  "description": "Lint JavaScript on the fly, using JavaScript Linter (jsl) (not yet ready)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtomLinter/linter-jsl"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# linter-jsl package\n\nThis package no yet ready.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/AtomLinter/linter-jsl/issues"
+  },
+  "homepage": "https://github.com/AtomLinter/linter-jsl",
+  "_id": "linter-jsl@0.0.1",
+  "dist": {
+    "shasum": "1ee34599fffd54e08977a60fc049a8ecee5b24ad"
+  },
+  "_resolved": "/private/var/folders/kt/r0d45m992ls9dpg_d9t64fd00000gp/T/d-114927-6099-1vmm51s/package.tgz",
+  "_from": "/private/var/folders/kt/r0d45m992ls9dpg_d9t64fd00000gp/T/d-114927-6099-1vmm51s/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

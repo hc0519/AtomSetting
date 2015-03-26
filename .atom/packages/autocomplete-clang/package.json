@@ -1,0 +1,614 @@
+{
+  "name": "autocomplete-clang",
+  "main": "./lib/autocomplete-clang",
+  "version": "0.3.1",
+  "description": "autocomplete for C/C++/ObjC using clang",
+  "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yasuyuky/autocomplete-clang"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.136.0"
+  },
+  "dependencies": {
+    "underscore-plus": "1.x",
+    "snippets": "git://github.com/atom/snippets.git#v0.55.0",
+    "pathwatcher": "^2.1.3",
+    "clang-flags": "0.1.2"
+  },
+  "readme": "# autocomplete-clang package\n\nThis package provides completions by [clang](http://clang.llvm.org/)\nlike [emacs auto-complete-clang.el](https://github.com/brianjcj/auto-complete-clang).\n\n**for `C`/`C++`/`Objective-C`**\n\n![Screenshot for how autocomplete works](https://raw.githubusercontent.com/yasuyuky/autocomplete-clang/DocumentImage/images/autocomplete-clang.gif)\n\nThis package is currently in an experimental state.\n\n## Features\n\n- Providing completions by clang\n- Auto toggle\n  - default keys `[\".\",\"#\",\"::\",\"->\"]`\n- Using `std` option like `c++11`\n- Using precompile headers for clang\n\n## Using precompiled headers\n\nIt can use precompiled headers for clang. *Optional*\n\nCommand for emitting precompiled header is easily access from menu.\n\n### Emitting pch(precompiled header file),\n\n1. Open `C`/`C++`/`Objective-C` source file on editor buffer.\n2. Choose `Packages` -> `Autocomplete Clang` -> `Emit Precompiled Header`\n3. Then package automatically detect emitted pch file.\n\n![Screenshot of emit-pch](https://raw.githubusercontent.com/yasuyuky/autocomplete-clang/DocumentImage/images/autocomplete-clang-emit-pch.png)\n\n### Notice\n\nIf you change the `std` option after you emitted the pch, you should emit pch again.\n\n\n## Settings\n\n### Global\n\n![Screenshot of configuration](https://raw.githubusercontent.com/yasuyuky/autocomplete-clang/DocumentImage/images/autocomplete-clang-settings.png)\n\n### Project\n\nautocomplete-clang will look for a .clang_complete file as used by vim's [clang_complete](https://github.com/Rip-Rip/clang_complete) plugin, by searching up the directory tree. If it finds one, it'll use this to add parameters passed to clang. Use this for adding project-specific defines or include paths. The format is simply one parameter per line, e.g.\n```\n  -I/opt/qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers\n  -I/opt/qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers\n  -DSWIFT_EXPERIMENTAL_FT\n```\n\n## Keymaps\n\n### Default keymaps\n\n`ctrl+alt+/`: toggle\n\nAlso you can customize keymaps by editing ~/.atom/keymap.cson\n(choose Open Your Keymap in Atom menu):\n\n```cson\n'.workspace':\n  'ctrl-alt-/': 'autocomplete-clang:toggle'\n  'cmd-ctrl-alt-e': 'autocomplete-clang:emit-pch'\n```\n\nSee Customizing Atom for more details.\n\n## License\n\nMIT (See License file)\n\n## Misc\n\n- Motivation of the original author is `C++`,\n  So that tests for `C`/`Objective-C` may be not enough.\n\n- Any casual feedbacks to [@yasuyuky](https://twitter.com/yasuyuky) are welcome.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/yasuyuky/autocomplete-clang/issues"
+  },
+  "homepage": "https://github.com/yasuyuky/autocomplete-clang",
+  "_id": "autocomplete-clang@0.3.1",
+  "dist": {
+    "shasum": "3bb7338967924ad4623ab4f694898946670d683b"
+  },
+  "_resolved": "/private/var/folders/kt/r0d45m992ls9dpg_d9t64fd00000gp/T/d-114927-4908-1qg4hs2/package.tgz",
+  "_from": "/private/var/folders/kt/r0d45m992ls9dpg_d9t64fd00000gp/T/d-114927-4908-1qg4hs2/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "clang-flags",
+        "version": "0.1.2",
+        "path": "node_modules/clang-flags/lib/clang-flags.js"
+      },
+      {
+        "name": "pathwatcher",
+        "version": "2.1.3",
+        "path": "node_modules/pathwatcher/lib/main.js"
+      },
+      {
+        "name": "async",
+        "version": "0.2.10",
+        "path": "node_modules/pathwatcher/node_modules/async/lib/async.js"
+      },
+      {
+        "name": "emissary",
+        "version": "1.3.1",
+        "path": "node_modules/pathwatcher/node_modules/emissary/lib/emissary.js"
+      },
+      {
+        "name": "harmony-collections",
+        "version": "0.3.7",
+        "path": "node_modules/pathwatcher/node_modules/emissary/node_modules/harmony-collections/harmony-collections.js"
+      },
+      {
+        "name": "mixto",
+        "version": "1.0.0",
+        "path": "node_modules/pathwatcher/node_modules/emissary/node_modules/mixto/lib/mixin.js"
+      },
+      {
+        "name": "property-accessors",
+        "version": "1.1.0",
+        "path": "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/lib/property-accessors.js"
+      },
+      {
+        "name": "harmony-collections",
+        "version": "0.3.7",
+        "path": "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.js"
+      },
+      {
+        "name": "event-kit",
+        "version": "0.6.0",
+        "path": "node_modules/pathwatcher/node_modules/event-kit/lib/event-kit.js"
+      },
+      {
+        "name": "fs-plus",
+        "version": "2.3.1",
+        "path": "node_modules/pathwatcher/node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.3.5",
+        "path": "node_modules/pathwatcher/node_modules/fs-plus/node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.2.8",
+        "path": "node_modules/pathwatcher/node_modules/fs-plus/node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "grim",
+        "version": "0.12.0",
+        "path": "node_modules/pathwatcher/node_modules/grim/lib/grim.js"
+      },
+      {
+        "name": "nan",
+        "version": "1.2.0",
+        "path": "node_modules/pathwatcher/node_modules/nan/include_dirs.js"
+      },
+      {
+        "name": "q",
+        "version": "1.0.1",
+        "path": "node_modules/pathwatcher/node_modules/q/q.js"
+      },
+      {
+        "name": "runas",
+        "version": "1.0.1",
+        "path": "node_modules/pathwatcher/node_modules/runas/lib/runas.js"
+      },
+      {
+        "name": "snippets",
+        "version": "0.55.0",
+        "path": "node_modules/pathwatcher/lib/main.js"
+      },
+      {
+        "name": "async",
+        "version": "0.2.10",
+        "path": "node_modules/snippets/node_modules/async/lib/async.js"
+      },
+      {
+        "name": "emissary",
+        "version": "1.3.1",
+        "path": "node_modules/snippets/node_modules/emissary/lib/emissary.js"
+      },
+      {
+        "name": "harmony-collections",
+        "version": "0.3.7",
+        "path": "node_modules/snippets/node_modules/emissary/node_modules/harmony-collections/harmony-collections.js"
+      },
+      {
+        "name": "mixto",
+        "version": "1.0.0",
+        "path": "node_modules/snippets/node_modules/emissary/node_modules/mixto/lib/mixin.js"
+      },
+      {
+        "name": "property-accessors",
+        "version": "1.1.0",
+        "path": "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/lib/property-accessors.js"
+      },
+      {
+        "name": "harmony-collections",
+        "version": "0.3.7",
+        "path": "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.js"
+      },
+      {
+        "name": "fs-plus",
+        "version": "2.3.1",
+        "path": "node_modules/snippets/node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.3.5",
+        "path": "node_modules/snippets/node_modules/fs-plus/node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.2.8",
+        "path": "node_modules/snippets/node_modules/fs-plus/node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "loophole",
+        "version": "0.1.0",
+        "path": "node_modules/snippets/node_modules/loophole/lib/loophole.js"
+      },
+      {
+        "name": "pegjs",
+        "version": "0.8.0",
+        "path": "node_modules/snippets/node_modules/pegjs/lib/peg.js"
+      },
+      {
+        "name": "season",
+        "version": "1.0.2",
+        "path": "node_modules/snippets/node_modules/season/lib/cson.js"
+      },
+      {
+        "name": "coffee-script",
+        "version": "1.7.1",
+        "path": "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/coffee-script.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.3.5",
+        "path": "node_modules/snippets/node_modules/season/node_modules/coffee-script/node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "optimist",
+        "version": "0.4.0",
+        "path": "node_modules/snippets/node_modules/season/node_modules/optimist/index.js"
+      },
+      {
+        "name": "wordwrap",
+        "version": "0.0.2",
+        "path": "node_modules/snippets/node_modules/season/node_modules/optimist/node_modules/wordwrap/index.js"
+      },
+      {
+        "name": "temp",
+        "version": "0.8.1",
+        "path": "node_modules/snippets/node_modules/temp/lib/temp.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.2.8",
+        "path": "node_modules/snippets/node_modules/temp/node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.6.1",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.6.0",
+        "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/autocomplete-clang-view.coffee",
+        "lib/autocomplete-clang.coffee",
+        "lib/util.coffee",
+        "node_modules/clang-flags/lib/clang-flags.coffee",
+        "node_modules/snippets/lib/snippet-body-parser.coffee",
+        "node_modules/snippets/lib/snippet-expansion.coffee",
+        "node_modules/snippets/lib/snippet.coffee",
+        "node_modules/snippets/lib/snippets-available.coffee",
+        "node_modules/snippets/lib/snippets.coffee"
+      ],
+      ".js": [
+        "node_modules/clang-flags/lib/clang-flags.js",
+        "node_modules/pathwatcher/lib/directory.js",
+        "node_modules/pathwatcher/lib/file.js",
+        "node_modules/pathwatcher/lib/main.js",
+        "node_modules/pathwatcher/node_modules/async/lib/async.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/behavior.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/emissary.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/emitter.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/helpers.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/signal.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/subscriber.js",
+        "node_modules/pathwatcher/node_modules/emissary/lib/subscription.js",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/harmony-collections/harmony-collections.js",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/harmony-collections/harmony-collections.min.js",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/mixto/lib/mixin.js",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/lib/property-accessors.js",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.js",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.min.js",
+        "node_modules/pathwatcher/node_modules/event-kit/lib/composite-disposable.js",
+        "node_modules/pathwatcher/node_modules/event-kit/lib/disposable.js",
+        "node_modules/pathwatcher/node_modules/event-kit/lib/emitter.js",
+        "node_modules/pathwatcher/node_modules/event-kit/lib/event-kit.js",
+        "node_modules/pathwatcher/node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/pathwatcher/node_modules/fs-plus/node_modules/mkdirp/examples/pow.js",
+        "node_modules/pathwatcher/node_modules/fs-plus/node_modules/mkdirp/index.js",
+        "node_modules/pathwatcher/node_modules/fs-plus/node_modules/rimraf/bin.js",
+        "node_modules/pathwatcher/node_modules/fs-plus/node_modules/rimraf/rimraf.js",
+        "node_modules/pathwatcher/node_modules/grim/lib/deprecation.js",
+        "node_modules/pathwatcher/node_modules/grim/lib/grim.js",
+        "node_modules/pathwatcher/node_modules/nan/include_dirs.js",
+        "node_modules/pathwatcher/node_modules/q/benchmark/compare-with-callbacks.js",
+        "node_modules/pathwatcher/node_modules/q/benchmark/scenarios.js",
+        "node_modules/pathwatcher/node_modules/q/q.js",
+        "node_modules/pathwatcher/node_modules/q/queue.js",
+        "node_modules/pathwatcher/node_modules/runas/lib/runas.js",
+        "node_modules/snippets/node_modules/async/lib/async.js",
+        "node_modules/snippets/node_modules/emissary/lib/behavior.js",
+        "node_modules/snippets/node_modules/emissary/lib/emissary.js",
+        "node_modules/snippets/node_modules/emissary/lib/emitter.js",
+        "node_modules/snippets/node_modules/emissary/lib/helpers.js",
+        "node_modules/snippets/node_modules/emissary/lib/signal.js",
+        "node_modules/snippets/node_modules/emissary/lib/subscriber.js",
+        "node_modules/snippets/node_modules/emissary/lib/subscription.js",
+        "node_modules/snippets/node_modules/emissary/node_modules/harmony-collections/harmony-collections.js",
+        "node_modules/snippets/node_modules/emissary/node_modules/harmony-collections/harmony-collections.min.js",
+        "node_modules/snippets/node_modules/emissary/node_modules/mixto/lib/mixin.js",
+        "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/lib/property-accessors.js",
+        "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.js",
+        "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.min.js",
+        "node_modules/snippets/node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/snippets/node_modules/fs-plus/node_modules/mkdirp/examples/pow.js",
+        "node_modules/snippets/node_modules/fs-plus/node_modules/mkdirp/index.js",
+        "node_modules/snippets/node_modules/fs-plus/node_modules/rimraf/bin.js",
+        "node_modules/snippets/node_modules/fs-plus/node_modules/rimraf/rimraf.js",
+        "node_modules/snippets/node_modules/loophole/lib/loophole.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler/opcodes.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler/passes/generate-bytecode.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler/passes/generate-javascript.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler/passes/remove-proxy-rules.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler/passes/report-left-recursion.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler/passes/report-missing-rules.js",
+        "node_modules/snippets/node_modules/pegjs/lib/compiler.js",
+        "node_modules/snippets/node_modules/pegjs/lib/grammar-error.js",
+        "node_modules/snippets/node_modules/pegjs/lib/parser.js",
+        "node_modules/snippets/node_modules/pegjs/lib/peg.js",
+        "node_modules/snippets/node_modules/pegjs/lib/utils.js",
+        "node_modules/snippets/node_modules/season/lib/cson.js",
+        "node_modules/snippets/node_modules/season/lib/csonc.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/browser.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/cake.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/coffee-script.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/command.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/grammar.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/helpers.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/index.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/lexer.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/nodes.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/optparse.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/parser.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/register.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/repl.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/rewriter.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/scope.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script/sourcemap.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/node_modules/mkdirp/examples/pow.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/node_modules/mkdirp/index.js",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/register.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/bool.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/boolean_double.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/boolean_single.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/default_hash.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/default_singles.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/divide.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/line_count.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/line_count_options.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/line_count_wrap.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/nonopt.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/reflect.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/short.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/string.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/usage-options.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/example/xup.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/index.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/node_modules/wordwrap/example/center.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/node_modules/wordwrap/example/meat.js",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/node_modules/wordwrap/index.js",
+        "node_modules/snippets/node_modules/temp/examples/grepcount.js",
+        "node_modules/snippets/node_modules/temp/examples/pdfcreator.js",
+        "node_modules/snippets/node_modules/temp/lib/temp.js",
+        "node_modules/snippets/node_modules/temp/no_cleanup.js",
+        "node_modules/snippets/node_modules/temp/no_cleanup_on_exit.js",
+        "node_modules/snippets/node_modules/temp/no_cleanup_on_exit.spec.js",
+        "node_modules/snippets/node_modules/temp/node_modules/rimraf/bin.js",
+        "node_modules/snippets/node_modules/temp/node_modules/rimraf/rimraf.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore-min.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      ],
+      ".json": [
+        "node_modules/clang-flags/package.json",
+        "node_modules/pathwatcher/api.json",
+        "node_modules/pathwatcher/node_modules/async/component.json",
+        "node_modules/pathwatcher/node_modules/async/package.json",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/harmony-collections/package.json",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/mixto/package.json",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/package.json",
+        "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/package.json",
+        "node_modules/pathwatcher/node_modules/emissary/package.json",
+        "node_modules/pathwatcher/node_modules/event-kit/api.json",
+        "node_modules/pathwatcher/node_modules/event-kit/package.json",
+        "node_modules/pathwatcher/node_modules/fs-plus/node_modules/mkdirp/package.json",
+        "node_modules/pathwatcher/node_modules/fs-plus/node_modules/rimraf/package.json",
+        "node_modules/pathwatcher/node_modules/fs-plus/package.json",
+        "node_modules/pathwatcher/node_modules/grim/package.json",
+        "node_modules/pathwatcher/node_modules/nan/package.json",
+        "node_modules/pathwatcher/node_modules/q/package.json",
+        "node_modules/pathwatcher/node_modules/runas/package.json",
+        "node_modules/pathwatcher/package.json",
+        "node_modules/snippets/node_modules/async/component.json",
+        "node_modules/snippets/node_modules/async/package.json",
+        "node_modules/snippets/node_modules/emissary/node_modules/harmony-collections/package.json",
+        "node_modules/snippets/node_modules/emissary/node_modules/mixto/package.json",
+        "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/package.json",
+        "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/package.json",
+        "node_modules/snippets/node_modules/emissary/package.json",
+        "node_modules/snippets/node_modules/fs-plus/node_modules/mkdirp/package.json",
+        "node_modules/snippets/node_modules/fs-plus/node_modules/rimraf/package.json",
+        "node_modules/snippets/node_modules/fs-plus/package.json",
+        "node_modules/snippets/node_modules/loophole/package.json",
+        "node_modules/snippets/node_modules/pegjs/package.json",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/node_modules/mkdirp/package.json",
+        "node_modules/snippets/node_modules/season/node_modules/coffee-script/package.json",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/node_modules/wordwrap/package.json",
+        "node_modules/snippets/node_modules/season/node_modules/optimist/package.json",
+        "node_modules/snippets/node_modules/season/package.json",
+        "node_modules/snippets/node_modules/temp/node_modules/rimraf/package.json",
+        "node_modules/snippets/node_modules/temp/package.json",
+        "node_modules/snippets/package.json",
+        "node_modules/underscore-plus/node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "package.json"
+      ],
+      ".node": [
+        "node_modules/pathwatcher/build/Release/pathwatcher.node",
+        "node_modules/pathwatcher/build/Release/pathwatcher.node.dSYM/Contents/Resources/DWARF/pathwatcher.node",
+        "node_modules/pathwatcher/node_modules/runas/build/Release/runas.node",
+        "node_modules/pathwatcher/node_modules/runas/build/Release/runas.node.dSYM/Contents/Resources/DWARF/runas.node"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "",
+          "spec"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "pathwatcher": "^2.1.3",
+          "clang-flags": "0.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/clang-flags/lib",
+          "node_modules/clang-flags",
+          "node_modules/clang-flags/spec"
+        ],
+        "dependencies": {
+          "pathwatcher": ">=1.0 <3.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher",
+          "node_modules/pathwatcher/build/Release",
+          "node_modules/pathwatcher/build/Release/pathwatcher.node.dSYM/Contents/Resources/DWARF",
+          "node_modules/pathwatcher/lib"
+        ],
+        "dependencies": {
+          "async": "~0.2.10",
+          "emissary": "^1.1.0",
+          "event-kit": "^0.6.0",
+          "fs-plus": "^2.1",
+          "grim": "^0.12.0",
+          "nan": "1.2.0",
+          "q": "~1.0.1",
+          "runas": "^1.0.1",
+          "underscore-plus": "~1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher/node_modules/emissary/lib",
+          "node_modules/pathwatcher/node_modules/emissary"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "mixto": "1.x",
+          "property-accessors": "^1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors/lib",
+          "node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors"
+        ],
+        "dependencies": {
+          "mixto": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher/node_modules/event-kit",
+          "node_modules/pathwatcher/node_modules/event-kit/lib"
+        ],
+        "dependencies": {
+          "grim": "^0.12.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher/node_modules/fs-plus/lib",
+          "node_modules/pathwatcher/node_modules/fs-plus"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "mkdirp": "~0.3.5",
+          "rimraf": "~2.2.2",
+          "async": "~0.2.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher/node_modules/grim/lib",
+          "node_modules/pathwatcher/node_modules/grim"
+        ],
+        "dependencies": {
+          "underscore-plus": "^1.0.0",
+          "emissary": "^1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pathwatcher/node_modules/runas/build/Release",
+          "node_modules/pathwatcher/node_modules/runas/build/Release/runas.node.dSYM/Contents/Resources/DWARF",
+          "node_modules/pathwatcher/node_modules/runas/lib",
+          "node_modules/pathwatcher/node_modules/runas"
+        ],
+        "dependencies": {
+          "nan": "1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/lib",
+          "node_modules/snippets",
+          "node_modules/snippets/spec/fixtures/package-with-broken-snippets/snippets",
+          "node_modules/snippets/spec/fixtures",
+          "node_modules/snippets/spec"
+        ],
+        "dependencies": {
+          "async": "~0.2.6",
+          "emissary": "1.x",
+          "fs-plus": "2.x",
+          "loophole": "^0.1.0",
+          "pathwatcher": "^2.0",
+          "pegjs": "~0.8.0",
+          "season": "1.x",
+          "temp": "~0.8.0",
+          "underscore-plus": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/emissary/lib",
+          "node_modules/snippets/node_modules/emissary"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "mixto": "1.x",
+          "property-accessors": "^1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/emissary/node_modules/property-accessors/lib",
+          "node_modules/snippets/node_modules/emissary/node_modules/property-accessors"
+        ],
+        "dependencies": {
+          "mixto": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/fs-plus/lib",
+          "node_modules/snippets/node_modules/fs-plus"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "mkdirp": "~0.3.5",
+          "rimraf": "~2.2.2",
+          "async": "~0.2.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/season/lib",
+          "node_modules/snippets/node_modules/season"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "coffee-script": "~1.7.0",
+          "optimist": "~0.4.0",
+          "fs-plus": "2.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/season/node_modules/coffee-script/lib/coffee-script",
+          "node_modules/snippets/node_modules/season/node_modules/coffee-script"
+        ],
+        "dependencies": {
+          "mkdirp": "~0.3.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/season/node_modules/optimist/example",
+          "node_modules/snippets/node_modules/season/node_modules/optimist",
+          "node_modules/snippets/node_modules/season/node_modules/optimist/test/_",
+          "node_modules/snippets/node_modules/season/node_modules/optimist/test"
+        ],
+        "dependencies": {
+          "wordwrap": "~0.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snippets/node_modules/temp/examples",
+          "node_modules/snippets/node_modules/temp/lib",
+          "node_modules/snippets/node_modules/temp",
+          "node_modules/snippets/node_modules/temp/test"
+        ],
+        "dependencies": {
+          "rimraf": "~2.2.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.6.0"
+        }
+      }
+    ]
+  }
+}

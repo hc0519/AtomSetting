@@ -1,0 +1,31 @@
+'global':
+  'editor':
+    'fontSize': 13
+    'tabLength': 4
+    'invisibles': {}
+  'exception-reporting':
+    'userId': '5f6d9a28-8d02-29d6-736b-460cd095fc8b'
+  'release-notes':
+    'viewedVersion': '0.95.0'
+  'welcome':
+    'showOnStartup': false
+  'metrics':
+    'userId': 'e907297e66443fa8893ce6bce9556ea9079e5a04'
+  'core':
+    'themes': [
+      'seti-ui'
+      'atom-dark-syntax'
+    ]
+    'disabledPackages': [
+      'atom-beautify'
+    ]
+  'autocomplete':
+    'includeCompletionsFromAllBuffers': true
+  'autocomplete-plus': {}
+  'atom-beautify':
+    'analytics': false
+  'linter':
+    'showAllErrorsInStatusBar': true
+    'showErrorInline': true
+  'linter-javacs':
+    'javaExecutablePath': /usr/bin/javac # java path. run 'which javac' to find the path
