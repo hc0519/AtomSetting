@@ -1,3 +1,13 @@
+## 1.3.0
+
+* Support correct order list numbers
+
+## 1.2.0
+
+* Support reference link insertion at the end of article
+* Simplify reference link insertion logic
+* `Tab` to indent list items
+
 ## 1.1.2
 
 * Remove Array#contains API usage
