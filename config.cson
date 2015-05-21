@@ -1,5 +1,8 @@
 "*":
-  editor: {}
+  editor:
+    fontSize: 12
+    invisibles: {}
+    tabLength: 4
   core:
     themes: [
       "atom-dark-ui"
@@ -9,3 +12,6 @@
     userId: "14cb81bb-e612-eb6c-efb3-31ae2eb6e3df"
   welcome:
     showOnStartup: false
+  linter: {}
+  "atom-terminal":
+    app: "iTerm.app"
